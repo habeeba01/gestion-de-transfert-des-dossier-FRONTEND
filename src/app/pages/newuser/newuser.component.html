@@ -1,0 +1,29 @@
+<div class="col" align="right">
+  <div class="card card-chart" style="padding: 3%;">
+    <form *ngIf="authenticate.roles[0].libelle == 'ADMIN'" (ngSubmit)="submit()">
+      <h5>معلومات المستخدم</h5>
+      <div class="form-group">
+        <label for="exampleInputEmail1">اسم االمستخدم </label>
+        <input type="text" class="form-control" placeholder="اسم االمستخدم " [(ngModel)]="user.username">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">كلمه السر</label>
+        <input type="password" class="form-control" placeholder="كلمه السر" [(ngModel)]="user.password">
+      </div>
+    
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">دور</label>
+        <select class="form-control" id="role" [(ngModel)]="rolesToUser.role">
+          <option *ngFor="let r of rolees" [ngValue]="r.libelle">{{r.libelle}}</option>
+        </select>
+      </div>
+      <hr style="margin-top: 2%;">
+
+   
+      <button type="submit" class="btn btn-primary">أضف</button>
+    </form>
+
+
+
+  </div>
+</div>

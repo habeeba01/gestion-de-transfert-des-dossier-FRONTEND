@@ -1,0 +1,86 @@
+<form (ngSubmit)="search()"  align="right">
+  <div class="input-group no-border" >
+    <input type="date" value="" class="form-control" placeholder="بحث..." #myInput [(ngModel)]="start" >
+    <div class="input-group-append">
+      <div class="input-group-text">
+        <i class="nc-icon nc-zoom-split"></i>
+      </div>
+    </div>
+  </div>
+  <div class="input-group no-border" >
+    <input type="date" value="" class="form-control" placeholder="بحث..." #myInput [(ngModel)]="end" >
+    <div class="input-group-append">
+      <div class="input-group-text">
+        <i class="nc-icon nc-zoom-split"></i>
+      </div>
+    </div>
+  </div>
+  <button >بحث</button>
+  <div class="row">
+    <div class="col-md-12">
+    <div class="card" >
+      <div class="card-header">
+        <h4 class="card-title"> الإحصائيات</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table" *ngIf="dossier">
+            <thead class=" text-primary">
+              <th colspan="3">
+                {{taille}} :  المحفوظات
+              </th>
+  
+            
+            </thead>
+            <thead class=" text-primary"  align="right">
+              <tr>
+
+                  <th>المجموع</th>
+                  <th> الصائر </th>
+                  <th > الغرامة</th>
+                  <th > نوع الحكم</th>
+                  <th >  وجهته</th>
+                  <th > رقم البطاقة الوطنية</th>
+                  <th > إسم المحكوم عليه</th>
+                  <th > تاريخ الحكم</th>
+                  <th >رقم الحكم</th>
+                  <th > أحيل إلى </th>
+                  <th > وصف الملف</th>
+                  <th > تاريخ الملف</th>
+                  <th >رقم الملف</th>
+
+
+                </tr>
+           
+          </thead>
+            <tbody>
+                <tr *ngFor="let d of dossier">
+                    <td>{{d.jugementModel.algharamaModels[0].montant+d.jugementModel.algharamaModels[0].assaeir}}</td>
+                    <td>{{d.jugementModel.algharamaModels[0].assaeir}}</td>
+                    <td>{{d.jugementModel.algharamaModels[0].montant}}</td>
+                    <td>{{d.jugementModel.jugementDescriptionModel.jugementDestinationModel.destination}}</td>
+                    <td>{{d.jugementModel.jugementDescriptionModel.description}}</td>
+                    <td>{{d.jugementModel.forcatModel.cin}}</td>
+                    <td>{{d.jugementModel.forcatModel.nom}}</td>
+                    <td>{{d.jugementModel.dateJugement}}</td>
+                    <td>{{d.jugementModel.numJugement}}</td>
+                    <td>{{d.descriptionDossierModel.destinationDossierModel.destination}}</td>
+                    <td>{{d.descriptionDossierModel.description}}</td>
+                    <td>{{d.date}}</td>
+                    <td>{{d.numDossier}}</td>
+                  
+                  </tr>
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  
+  
+   
+    </div>
+  </div>
+
+
+</form>

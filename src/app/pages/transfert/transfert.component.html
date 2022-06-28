@@ -1,0 +1,86 @@
+<form (ngSubmit)="search()" align="right">
+   
+       
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">أحيل إلى</label>
+        <select class="form-control" id="detinationDossierModel"  [(ngModel)]="destination">
+          <option *ngFor="let d of destin"  [ngValue]="d.destination">{{d.destination}}</option>
+        
+        </select>
+      </div>
+     
+      <div class="input-group no-border" >
+        <input type="text" value="{{myDate}}" [attr.disabled]="true"  class="form-control" placeholder="بحث..."  [(ngModel)]="myDate" align="right"/>
+       
+      </div>
+      <button >بحث</button>
+     
+    
+    <div class="row">
+       
+      <div class="col-md-12">
+      <div class="card" >
+        <section id="Myprint">
+        <div class="card-header" align="right">
+          <h4 class="card-title">   <div align="center">
+         
+            {{destination}}  قائمة الملفات الجنحية المحالة على مكتب  
+            <br>
+             {{myDate}}   بتاريخ
+            </div></h4>
+          <th colspan="3" >
+      
+       
+         {{taille}} :ملف 
+         <br>
+        {{destination}} :  من نوع  
+      </th>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+           
+            <table class="table" *ngIf="dossier"  align="center">
+             
+             
+              <thead class=" text-primary" align="right">
+                  <tr>
+                    <th > أحيل إلى </th>
+                    <th > وصف الملف</th>
+                      <th >رقم الملف</th>
+                    </tr>
+               
+              </thead>
+              <tbody align="right">
+                  <tr *ngFor="let d of dossier">
+                     
+                
+                     
+                      <td>{{d.descriptionDossierModel.destinationDossierModel.destination}}</td>
+                      <td>{{d.descriptionDossierModel.description}}</td>
+                      <td>{{d.numDossier}}</td>
+                    </tr>
+                  
+              </tbody>
+            
+            </table>
+      
+          </div>
+        </div>
+      </section>
+      </div>
+    
+      <div class="col-md-6 pr-1">
+        <div class="form-group">
+         
+          <button type="button" class="btn btn-outline-success" onclick="window.print()" (click)="delete()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> إحالة</button>
+        
+        </div>
+      </div>
+     
+      </div>
+    </div>
+  
+ 
+ 
+
+  </form>

@@ -1,0 +1,32 @@
+<div class="sidebar-wrapper">
+  <div class="logo">
+   
+    <a  class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img src="../../assets/img/mj.png">
+      </div>
+    </a>
+    <a  class="simple-text logo-normal">
+      وزارة العدل 
+    </a>
+  </div>
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a routerLink="/user" class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img src="../../assets/img/default-avatar.png">
+      </div>
+    </a>
+    <a  class="simple-text logo-normal">
+      {{user.username}}
+    </a>
+  </div>
+    <ul class="nav" *ngFor="let menuItem of menuItems">
+        <li  routerLinkActive="active" >
+            <a [routerLink]="[menuItem.path]">
+                <i class="nc-icon {{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

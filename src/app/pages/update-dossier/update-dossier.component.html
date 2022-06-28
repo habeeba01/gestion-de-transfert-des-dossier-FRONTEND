@@ -1,0 +1,107 @@
+<div class="col-md-8" align="right">
+  <div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">
+        {{d.numDossier}}    تغيير  المجلد رقم 
+      </h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="update()">
+        <div class="row">
+          <form [formGroup]="edit">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>رقم الملف </label>
+              <input type="text" class="form-control" disabled=""   formControlName="numDossier" >
+            </div>
+          </div>
+          <div class="form-group" >
+            <label for="exampleFormControlSelect1">وصف الملف</label>
+            <select class="form-control" id="descriptionDossierModel" formControlName="descriptionDossierModel">
+              
+              <option *ngFor="let d of descDossier" [ngValue]="d.description">{{d.description}}</option>
+            </select>
+          </div>
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>تاريخ الملف</label>
+              <input type="text" class="form-control" formControlName="date">
+            </div>
+          </div>
+        </form>
+        <form [formGroup]="editJ">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>رقم الحكم </label>
+              <input type="text" class="form-control"  formControlName="numJugement">
+            </div>
+          </div>
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>تاريخ الحكم </label>
+              <input type="text" class="form-control"  formControlName="dateJugement">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"> وجهته</label>
+            <select class="form-control" id="description" formControlName="descriptionJugement">
+              <option *ngFor="let d of descJug" [ngValue]="d.description">{{d.description}}</option>
+           
+            </select>
+          
+          </div>
+        </form>
+        <form [formGroup]="editF">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>إسم المحكوم عليه </label>
+              <input type="text" class="form-control" formControlName="nom">
+            </div>
+          </div>
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>رقم البطاقة الوطنية</label>
+              <input type="text" class="form-control"   formControlName="cin">
+            </div>
+          </div>
+      
+</form>
+        <form [formGroup]="editA">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>الغرامة</label>
+              <input type="text" class="form-control"  formControlName="montant">
+            </div>
+          </div>
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>الصائر</label>
+              <input type="text" class="form-control"   formControlName="assaeir">
+            </div>
+          </div>
+    
+        </form>
+      
+    
+      
+     
+     
+
+      </div>
+      <div class="col-md-6 pr-1">
+        
+   
+        <div class="form-group">
+         
+          <button>تحديث</button>
+
+        </div>
+      </div>
+    
+      </form>
+      
+    </div>
+  </div>
+  
+</div>
+

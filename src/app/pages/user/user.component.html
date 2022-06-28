@@ -1,0 +1,48 @@
+<div class="row"  align="right">
+  <div class="col-md-4">
+    <div class="card card-user">
+      <br><br><br><br><br><br>
+      <div class="card-body">
+        <div class="author">
+
+            <img class="avatar border-gray" src="../../../assets//img/default-avatar.png" alt="...">
+            <h5 class="title">{{user.roles[0].libelle}}</h5>
+
+          <p class="description">
+            @{{user.username}}
+          </p>
+        </div>
+     
+      </div>
+
+    </div>
+
+  </div>
+  <div class="col-md-8">
+    <div class="card card-user">
+      <div class="card-header">
+        <h5 class="card-title">الملف الشخصي</h5>
+      </div>
+      <div class="card-body">
+        <form >
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>دور</label>
+                <input type="text" class="form-control" disabled="" placeholder="دور" value="{{user.roles[0].libelle}}">
+              </div>
+            </div>
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>اسم االمستخدم</label>
+                <input type="text" class="form-control" disabled="" placeholder="اسم االمستخدم" value="{{user.username}}">
+              </div>
+            </div>
+          </div>
+        
+       
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
